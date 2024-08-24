@@ -14,9 +14,9 @@ function App() {
         <Conditionalrendering items={foodItems} />
         <ErrorMEssage items={foodItems} />
       </Cotainer>
-      <Cotainer>
+      {/* <Cotainer>
         <p>Hello here are list of some Healthy food !</p>
-      </Cotainer>
+      </Cotainer> */}
     </>
   );
 }
