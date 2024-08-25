@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Items from "./Items";
 
 function Conditionalrendering({ items }) {
+  let [active, setActive] = useState([]);
+
+  let onByButton = (items, event) => {
+    let newItems = [...active, items];
+    setActive(newItems);
+  };
+
   return (
     <div>
       <ul className="list-group">
@@ -9,7 +16,8 @@ function Conditionalrendering({ items }) {
           <Items
             key={item}
             foodItems={item}
-            handleBuyButtonClick={() => console.log(`${item} bought !`)}
+            bought={active.includes(item)}
+            handleBuyButtonClick={(event) => onByButton(item, event)}
           />
         ))}
       </ul>
