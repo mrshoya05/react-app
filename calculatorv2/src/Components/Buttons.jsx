@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./button.module.css";
 
-const Buttons = () => {
+const Buttons = ({ onButtonClick }) => {
+  // let handlebtnvalue = () => {
+  //   console.log("hy");
+  // };
   const btnNames = [
-    "c",
+    "C",
     "1",
     "2",
     "+",
@@ -24,7 +27,11 @@ const Buttons = () => {
   return (
     <div className={styles.buttonCon}>
       {btnNames.map((item) => (
-        <button key={item} className={styles.btn}>
+        <button
+          onClick={() => onButtonClick(item)}
+          key={item}
+          className={styles.btn}
+        >
           {item}
         </button>
       ))}
